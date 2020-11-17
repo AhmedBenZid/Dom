@@ -11,8 +11,10 @@ for (let plus of buttonplus) {
 let buttonminus = document.getElementsByClassName("minus");
 for (let minus of buttonminus) {
     minus.addEventListener("click", function () {
-        minus.nextElementSibling.value--;
-        shoppingTotal();
+        while (minus.nextElementSibling.value > 0) {
+            minus.nextElementSibling.value--;
+            shoppingTotal();
+        }
     });
 }
 
